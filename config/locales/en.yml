@@ -49,6 +49,26 @@ en:
     new:
       signup: "Sign up"
       page: "This will be a signup page for new users."
+      name: "Name"
+      email: "Email"
+      pass: "Password"
+      pass_con: "Confirmation"
+      create: "Create my account"
+    create:
+      success: "Welcome to the Sample App!"
+      error: "Sign up failed"
   helpers:
     application_helper:
       app: "Ruby On Rails Tutorial"
+  shared:
+    error_messages:
+      form_contain: "The form contains"
+      error: "error"
+  sessions:
+    create:
+      login_error: "Invalid email/password combination"
+      success: "Log in successed!"
+    new:
+      login: "Log in"
+      signup: "Sign up now!"
+      newuser: "New user?"
