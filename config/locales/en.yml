@@ -64,3 +64,11 @@ en:
     error_messages:
       form_contain: "The form contains"
       error: "error"
+  sessions:
+    create:
+      login_error: "Invalid email/password combination"
+      success: "Log in successed!"
+    new:
+      login: "Log in"
+      signup: "Sign up now!"
+      newuser: "New user?"
