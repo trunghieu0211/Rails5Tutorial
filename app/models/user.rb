@@ -40,4 +40,8 @@ class User < ApplicationRecord
   def forget
     update_attributes remember_digest: nil
   end
+
+  def is_user? user
+    self == user
+  end
 end
