@@ -45,7 +45,11 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Login"
+      setting: "Settings"
   users:
+    index:
+      all_users: "All users"
+      login_error: "Please log in."
     new:
       signup: "Sign up"
       page: "This will be a signup page for new users."
@@ -57,6 +61,30 @@ en:
     create:
       success: "Welcome to the Sample App!"
       error: "Sign up failed"
+    edit:
+      edit: "Edit user"
+      update_profile: "Update your profile"
+      name: "Name"
+      email: "Email"
+      pass: "Password"
+      pass_con: "Confirmation"
+      save: "Save changes"
+      change: "change"
+      login_error: "Please log in."
+    update:
+      success: "Profile updated"
+      error: "Update failed"
+    form:
+      name: "Name"
+      email: "Email"
+      pass: "Password"
+      pass_con: "Confirmation"
+    user:
+      delete: "delete"
+      sure: "You sure?"
+    destroy:
+      delete_user: "User deleted"
+      delete_failed: "User delete failed"
   helpers:
     application_helper:
       app: "Ruby On Rails Tutorial"

@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, except: [:new, :create, :show]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :load_user, except: [:new, :index, :create]
+  before_action :verify_admin, only: :destroy
+
+  def index
+     @users = User.select(:id, :name, :email, :is_admin).order(:id)
+      .paginate page: params[:page], per_page: Settings.user.users_page
+  end
 
   def show
-    @user = User.find_by id: params[:id]
     render file: "public/404.html", layout: false unless @user
   end
 
@@ -15,16 +23,63 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = t ".success"
-      redirect_to @user
+      redirect_back_or user
     else
       flash.now[:danger] = t ".error"
       render :new
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t ".success"
+      redirect_to @user
+    else
+      flash.now[:danger] = t ".error"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".delete_user"
+      redirect_to users_url
+    else
+      flash.now[:alert] = t ".delete_failed"
+      redirect_to root_path
+    end
+  end
+
   private
 
-    def user_params
-      params.require(:user).permit :name, :email, :password, :password_confirmation
+  def user_params
+    params.require(:user).permit :name, :email, :password, :password_confirmation
+  end
+
+  def load_user
+     @user = User.find_by id: params[:id]
+
+    return if @user
+    render file: "public/404.html", status: :not_found, layout: false
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t ".login_error"
+      redirect_to login_url
     end
+  end
+
+  def correct_user
+    @user = User.find_by id: params[:id]
+    redirect_to root_url unless @user.is_admin?
+  end
+
+  def verify_admin
+    redirect_to root_url unless current_user.is_admin?
+  end
 end
