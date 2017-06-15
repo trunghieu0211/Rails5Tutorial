@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    render file: "public/404.html", layout: false unless @user
   end
 
   def new
@@ -21,9 +20,9 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      log_in @user
-      flash[:success] = t ".success"
-      redirect_back_or user
+      @user.send_activation_email
+      flash[:info] = t ".check_email"
+      redirect_to root_path
     else
       flash.now[:danger] = t ".error"
       render :new
