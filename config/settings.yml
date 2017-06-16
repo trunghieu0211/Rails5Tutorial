@@ -4,5 +4,6 @@ user:
   min_password_size: 6
   avatar_size: 50
   users_page: 10
+  reset_sent_time: 2
 helper:
   gravatar_size: 80
