@@ -25,6 +25,7 @@ en:
       sampleapp: "sample application."
       signup: "Sign up now!"
       railslogo: "Rails logo"
+      micropost_feed: "Micropost Feed"
     contact:
       contact: "Contact"
       get_contact: "Contact the Ruby on Rails Tutorial about the sample app at the"
@@ -32,6 +33,7 @@ en:
   layouts:
     application:
       app: "Ruby on Rails Tutorial Sample App"
+      please: "Please log in."
     footer:
       book: "Ruby on Rails Tutorial"
       auth: "Michael Hartl"
@@ -62,6 +64,8 @@ en:
       success: "Welcome to the Sample App!"
       error: "Sign up failed"
       check_email: "Please check your email to activate your account."
+    show:
+      microposts: "Microposts"
     edit:
       edit: "Edit user"
       update_profile: "Update your profile"
@@ -93,6 +97,12 @@ en:
     error_messages:
       form_contain: "The form contains"
       error: "error"
+    user_info:
+      view_profile: "view my profile"
+      micropost: "micropost"
+    micropost_form:
+      compose_micropost: "Compose new micropost..."
+      post: "Post"
   sessions:
     create:
       login_error: "Invalid email/password combination"
@@ -138,4 +148,18 @@ en:
       can't_empty: "can't be empty"
       password_reset: "Password has been reset."
       password_reset_expired: "Password reset has expired"
+  microposts:
+    max_picture_size: "Should be less than 5MB"
+    micropost:
+      posted: "Posted"
+      ago: "ago"
+      delete: "delete"
+      confirm: "You sure?"
+      maximum_img: "Maximum file size is 5MB. Please choose a smaller file."
+    create:
+      created: "Microposts created"
+      error: "Microposts not created"
+    destroy:
+      micropost_deleted: "Micropost deleted"
+      error_destroy: "Micropost not deleted"
 
