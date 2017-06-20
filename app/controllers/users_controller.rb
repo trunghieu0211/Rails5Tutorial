@@ -5,11 +5,12 @@ class UsersController < ApplicationController
   before_action :verify_admin, only: :destroy
 
   def index
-     @users = User.select(:id, :name, :email, :is_admin).order(:id)
-      .paginate page: params[:page], per_page: Settings.user.users_page
+    @microposts = @user.microposts.feed_sort.page(params[:page]).
+      per_page Settings.feed.number_feed
   end
 
   def show
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new

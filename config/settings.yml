@@ -5,5 +5,17 @@ user:
   avatar_size: 50
   users_page: 10
   reset_sent_time: 2
+  seed_record: 99
 helper:
   gravatar_size: 80
+micropost:
+  max_content_size: 140
+  take_user: 6
+  sentence: 5
+  seed_record: 50
+  max_picture_size: 5
+picture:
+  resize_limit: 400
+feed:
+  number_feed: 5
+
