@@ -104,15 +104,13 @@ en:
       newuser: "New user?"
       remember: "Remember me on this computer"
       forgot: "(forgot password)"
-  mailer:
+  user_mailer:
     account_activation:
       activation: "Account activation"
       hi: "Hi"
       welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
       sampleapp: "Sample App"
       activate: "Activate"
-      activated: "Account activated!"
-      invalid: "Invalid activation link"
     password_reset:
       reset_pass: "Password reset"
       click_the_link: "To reset your password click the link below:"
@@ -138,4 +136,8 @@ en:
       can't_empty: "can't be empty"
       password_reset: "Password has been reset."
       password_reset_expired: "Password reset has expired"
+  account_activations:
+    edit:
+      activated: "Account activated!"
+      invalid: "Invalid activation link"
 
